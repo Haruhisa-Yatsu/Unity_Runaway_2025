@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// NavMeshを使用するために追加
+using UnityEngine.AI;
+
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private NavMeshAgent _agent;
+
     /// <summary>
     /// 移動の速さ
     /// </summary>
@@ -22,25 +28,25 @@ public class Player : MonoBehaviour
         // 奥移動
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += 
+            _agent.nextPosition += 
                 Vector3.forward * _velocity * Time.deltaTime;
         }
         // 左移動
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= 
+            _agent.nextPosition -= 
                 Vector3.right * _velocity * Time.deltaTime;
         }
         // 手前移動
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= 
+            _agent.nextPosition -= 
                 Vector3.forward * _velocity * Time.deltaTime;
         }
         // 右移動
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += 
+            _agent.nextPosition += 
                 Vector3.right * _velocity * Time.deltaTime;
         }
     }
