@@ -22,22 +22,26 @@ public class Player : MonoBehaviour
         // ‰œˆÚ“®
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.forward * _velocity * Time.deltaTime;
+            transform.position += 
+                Vector3.forward * _velocity * Time.deltaTime;
         }
         // ¶ˆÚ“®
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position -= Vector3.right * _velocity * Time.deltaTime;
+            transform.position -= 
+                Vector3.right * _velocity * Time.deltaTime;
         }
         // è‘OˆÚ“®
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= Vector3.forward * _velocity * Time.deltaTime;
+            transform.position -= 
+                Vector3.forward * _velocity * Time.deltaTime;
         }
         // ‰EˆÚ“®
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * _velocity * Time.deltaTime;
+            transform.position += 
+                Vector3.right * _velocity * Time.deltaTime;
         }
     }
 }
