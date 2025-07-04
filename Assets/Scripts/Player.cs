@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         // 手前移動
         if (Input.GetKey(KeyCode.S))
         {
+          
             _agent.nextPosition -= 
                 Vector3.forward * _velocity * Time.deltaTime;
         }
@@ -50,4 +51,22 @@ public class Player : MonoBehaviour
                 Vector3.right * _velocity * Time.deltaTime;
         }
     }
+
+    /// <summary>
+    /// 衝突したときに実行される
+    /// </summary>
+    /// <param name="collision"></param>
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.TryGetComponent(out Enemy enemy))
+        {
+            /// 各自実装お願いします。
+            // ゲームオーバーシーンに遷移する。
+
+            Debug.Log("プレイヤーがエネミーとぶつかった");
+
+        }
+    }
+
+
 }
