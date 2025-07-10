@@ -4,6 +4,7 @@ using UnityEngine;
 
 // NavMeshを使用するために追加
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour
         {
             /// 各自実装お願いします。
             // ゲームオーバーシーンに遷移する。
+            SceneManager.LoadScene("GameOver");
 
             Debug.Log("プレイヤーがエネミーとぶつかった");
 
